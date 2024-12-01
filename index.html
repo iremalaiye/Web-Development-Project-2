@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Head-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <link rel="icon" href="images\logo.png" type="image/png">
+
+ </head>
+ <!-- Head finished-->
+
+
+<!-- Body-->
+<body>
+
+<!-- Header-->
+  <header>
+    <h1>Student Management System</h1>
+  </header>
+<!-- Header finished-->
+
+<!-- nav-->
+  <nav>
+    <button onclick="showSection('add-lecture')">Add Lecture</button>
+    <button onclick="showSection('lecture-list')">Lectures</button>
+    <button onclick="showSection('add-student')">Add or Update Student</button>
+    <button onclick="showSection('filters-studentlist')">Filter-Student List</button>
+    <button onclick="showSection('gpa')">GPA</button>
+  </nav>
+<!-- nav finished-->
+
+
+<!-- main content-->
+  <main>
+   
+  
+   
+   <!-- Add Lecture Button -->
+    <section id="add-lecture">
+      <h2>Add Lecture</h2>
+      <form id="lecture-form">
+        <label for="lecture-name">Lecture Name:</label>
+        <input type="text" id="lecture-name" placeholder="Enter lecture name" required>
+        
+        <label for="score-type">Score Type:</label>
+        <select id="score-type" required>
+          <option value="7">7 Point Scale</option>
+          <option value="10">10 Point Scale</option>
+        </select>
+
+        <button type="submit">Add Lecture</button>
+      </form>
+    </section>
+    <!-- Add Lecture Button finished -->
+	
+	
+	
+    <!-- Lectures Button -->
+    <section id="lecture-list" >
+      <h2>Lecture List</h2>
+      <ul id="lecture-list-items">
+        <!-- dynamic lectures data -->
+      </ul>
+    </section>
+	<!-- Lectures Button finished -->
+
+
+
+    <!-- Add or Update Student Button -->
+    <section id="add-student">
+      <h2>Add or Update Student</h2>
+      <form id="student-form">
+        <label for="student-id">Student ID:</label>
+        <input type="text" id="student-id" placeholder="Enter student ID" required>
+
+        <label for="student-name">Name:</label>
+        <input type="text" id="student-name" placeholder="Enter student name" required>
+
+        <label for="student-surname">Surname:</label>
+        <input type="text" id="student-surname" placeholder="Enter student surname" required>
+
+        <label for="student-midterm">Midterm Score:</label>
+        <input type="number" id="student-midterm" placeholder="Midterm score" required>
+
+        <label for="student-final">Final Score:</label>
+        <input type="number" id="student-final" placeholder="Final score" required>
+
+        <label for="lecture-select">Lecture:</label>
+        <select id="lecture-select">
+          <option value="" disabled selected>Select Lecture</option>
+        </select>
+        <button id="add-button">Add Student</button>
+        <button id="update-button" style="display: none;">Update Student</button>
+      </form>
+    </section>
+    <!-- Add or Update Student Button finished -->
+
+
+
+    <!-- Filter Student List Button -->
+    <section id="filters-studentlist">
+      <h2>Filter Results</h2>
+      <label for="filter-lecture-select">Select Lecture:</label>
+      <select id="filter-lecture-select">
+        <option value="" disabled selected>Select Lecture</option>
+      </select>
+
+      <button id="view-all">View All Students</button><br><br>
+      <button id="view-passed">View Passed Students</button><br><br>
+      <button id="view-failed">View Failed Students</button><br><br>
+      <button id="view-details">View Lecture Details</button><br><br>
+	  
+	  <div id="lecture-details" style="display: none;">
+		  <p id="details-passed"></p>
+		  <p id="details-failed"></p>
+		  <p id="details-mean"></p>
+	  </div>
+	  
+			
+		  <!-- Student List Section -->
+		
+		  <h2>Student List</h2>
+		  <input type="text" id="search" placeholder="Search student by name...">
+		  
+		  <table id="student-table">
+			<thead>
+			  <tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Surname</th>
+				<th>Lecture</th>
+				<th>Midterm</th>
+				<th>Final</th>
+				<th>Grade</th>
+				<th>7 Point Scale</th>
+				<th>10 Point Scale</th>
+				<th>Actions</th>
+			  </tr>
+			</thead>
+			
+			<tbody>
+			  <!-- dynamic student data -->
+			</tbody>
+			
+		  </table>
+		</section>
+	<!-- Filter Student List Button finished -->
+	
+	
+
+    <!-- GPA Section -->
+    <section id="gpa">
+      <h2>GPA</h2>
+      <table id="gpa-table">
+        <thead>
+          <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>GPA</th>
+          </tr>
+        </thead>
+        
+		<tbody>
+          <!-- dynamic gpa data -->
+        </tbody>
+		
+      </table>
+    </section>
+	<!-- GPA Section finished -->
+	
+  </main>
+  <!-- main content finish-->
+
+ 
+</body>
+<!-- Body finished-->
+
+</html>
